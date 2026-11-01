@@ -7,16 +7,13 @@ let log = Logger(subsystem: "com.dvemar.alttab", category: "app")
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
     private let hotkeyTap = HotkeyTap()
+    private let controller = SwitcherController()
     private var trustTimer: Timer?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         log.info("AltTab started")
-        hotkeyTap.onTab = {
-            let windows = WindowList.current()
-            log.info("onTab: \(windows.count) windows")
-            if windows.count > 1 { WindowList.focus(windows[1]) }
-        }
-        hotkeyTap.onOptionReleased = { log.info("onOptionReleased") }
+        hotkeyTap.onTab = { [controller] in controller.onTab() }
+        hotkeyTap.onOptionReleased = { [controller] in controller.onOptionReleased() }
 
         if isTrusted(prompt: true) {
             startTap()
