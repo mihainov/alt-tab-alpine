@@ -4,7 +4,7 @@ BUILD_DIR  := .build/release
 APP        := $(APP_NAME).app
 INSTALL_DIR ?= $(HOME)/Applications
 
-.PHONY: build bundle sign install run stop test clean
+.PHONY: build bundle sign install run stop test clean reset-permission
 
 build:
 	swift build -c release
@@ -40,3 +40,7 @@ test:
 
 clean:
 	rm -rf .build $(APP)
+
+# Removes a stale Accessibility entry, for example one from an old signature.
+reset-permission: stop
+	tccutil reset Accessibility com.dvemar.alttab

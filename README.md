@@ -26,6 +26,7 @@ Other targets:
 |--------------|-------------------------------------------|
 | `make test`  | Run the `SwitcherState` tests             |
 | `make stop`  | Stop the running app                      |
+| `make reset-permission` | Remove the Accessibility entry of the app |
 | `make clean` | Remove the build output and `AltTab.app`  |
 
 ## Signing certificate
@@ -44,7 +45,10 @@ A self-signed certificate gives a stable signature.
 If the certificate does not exist, `make` uses an ad-hoc signature and shows a warning.
 To use a different certificate name, run `make install IDENTITY="My Name"`.
 
-If you rebuild with a new signature, remove the old AltTab entry from the Accessibility list. Then give the permission again.
+If the signature changes (for example, from ad-hoc to `AltTab Dev`), macOS keeps the old entry,
+but the entry does not match the new signature, and the key combination does nothing.
+The log of `tccd` then shows `Failed to match existing code requirement`.
+To fix this, run `make reset-permission && make run`. Then give the permission again.
 
 ## Logs
 
