@@ -6,6 +6,7 @@ A minimal Windows-style window switcher for macOS 14+.
 - Release Option to focus the selected window.
 - A quick tap (less than 150 ms) switches to the previous window and shows no panel.
 - One item per window, in most-recently-used order, current Space only.
+- The panel shows a vertical list. Each row shows the app icon, the window title and the app name.
 - No minimized windows, no windows of hidden apps.
 - The system Cmd+Tab does not change.
 
