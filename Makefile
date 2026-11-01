@@ -15,9 +15,9 @@ bundle: build
 	cp $(BUILD_DIR)/$(APP_NAME) $(APP)/Contents/MacOS/$(APP_NAME)
 	cp Resources/Info.plist $(APP)/Contents/Info.plist
 
-# A stable identity keeps the Accessibility grant across rebuilds; ad-hoc is a fallback.
+# A stable identity keeps the Accessibility grant across rebuilds; ad-hoc is a fallback. No -v: a self-signed identity is not trusted.
 sign: bundle
-	@if security find-identity -v -p codesigning | grep -q "\"$(IDENTITY)\""; then \
+	@if security find-identity -p codesigning | grep -q "\"$(IDENTITY)\""; then \
 		codesign --force --sign "$(IDENTITY)" $(APP); \
 	else \
 		echo "warning: identity '$(IDENTITY)' not found, using ad-hoc signature"; \
