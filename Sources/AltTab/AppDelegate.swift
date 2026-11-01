@@ -11,7 +11,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         log.info("AltTab started")
-        hotkeyTap.onTab = { log.info("onTab") }
+        hotkeyTap.onTab = {
+            let windows = WindowList.current()
+            log.info("onTab: \(windows.count) windows")
+            if windows.count > 1 { WindowList.focus(windows[1]) }
+        }
         hotkeyTap.onOptionReleased = { log.info("onOptionReleased") }
 
         if isTrusted(prompt: true) {
