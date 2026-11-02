@@ -2,19 +2,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "AltTab",
+    name: "AltTabAlpine",
     platforms: [.macOS(.v14)],
     targets: [
         .target(name: "SwitcherCore", path: "Sources/SwitcherCore"),
         .executableTarget(
-            name: "AltTab",
+            name: "AltTabAlpine",
             dependencies: ["SwitcherCore"],
-            path: "Sources/AltTab"
+            path: "Sources/AltTabAlpine"
         ),
         .testTarget(
-            name: "AltTabTests",
+            name: "AltTabAlpineTests",
             dependencies: ["SwitcherCore"],
-            path: "Tests/AltTabTests"
+            path: "Tests/AltTabAlpineTests"
         ),
     ]
 )

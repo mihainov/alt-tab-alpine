@@ -3,7 +3,7 @@ import ApplicationServices
 import os
 import ServiceManagement
 
-let log = Logger(subsystem: "com.dvemar.alttab", category: "app")
+let log = Logger(subsystem: "com.dvemar.alttab-alpine", category: "app")
 
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {

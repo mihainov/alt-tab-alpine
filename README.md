@@ -1,6 +1,7 @@
-# AltTab
+# AltTab Alpine
 
 A minimal Windows-style window switcher for macOS 14+.
+The name comes from Alpine Linux: as small as possible, but complete.
 
 - Hold Option, press Tab to open the switcher and step forward.
 - Release Option to focus the selected window.
@@ -11,13 +12,12 @@ A minimal Windows-style window switcher for macOS 14+.
 - The system Cmd+Tab does not change.
 
 The app has no visible icon. It starts at login.
-To check if it runs, use `pgrep -f ~/Applications/AltTab.app`.
-Other apps can also have the process name `AltTab`, so do not use `pgrep AltTab`.
+To check if it runs, use `pgrep -x AltTabAlpine`.
 
 ## Build and install
 
 1. Create the signing certificate one time (see below).
-2. Run `make install`. The app goes to `~/Applications/AltTab.app`.
+2. Run `make install`. The app goes to `~/Applications/AltTabAlpine.app`.
 3. Run `make run`.
 4. Give the Accessibility permission when macOS asks (System Settings → Privacy & Security → Accessibility).
    The app starts the key listener within one second after you give the permission.
@@ -29,7 +29,7 @@ Other targets:
 | `make test`  | Run the `SwitcherState` tests             |
 | `make stop`  | Stop the running app                      |
 | `make reset-permission` | Remove the Accessibility entry of the app |
-| `make clean` | Remove the build output and `AltTab.app`  |
+| `make clean` | Remove the build output and `AltTabAlpine.app` |
 
 ## Signing certificate
 
@@ -55,7 +55,7 @@ To fix this, run `make reset-permission && make run`. Then give the permission a
 ## Logs
 
 ```sh
-log stream --level debug --predicate 'subsystem == "com.dvemar.alttab"'
+log stream --level debug --predicate 'subsystem == "com.dvemar.alttab-alpine"'
 ```
 
 ## Login item

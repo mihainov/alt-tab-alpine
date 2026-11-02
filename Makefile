@@ -1,4 +1,4 @@
-APP_NAME   := AltTab
+APP_NAME   := AltTabAlpine
 IDENTITY   ?= AltTab Dev
 BUILD_DIR  := .build/release
 APP        := $(APP_NAME).app
@@ -43,4 +43,4 @@ clean:
 
 # Removes a stale Accessibility entry, for example one from an old signature.
 reset-permission: stop
-	tccutil reset Accessibility com.dvemar.alttab
+	tccutil reset Accessibility com.dvemar.alttab-alpine
