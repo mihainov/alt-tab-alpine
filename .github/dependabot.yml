@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    # Wait before a new release is proposed, so a compromised release has time to be found.
+    cooldown:
+      default-days: 14
