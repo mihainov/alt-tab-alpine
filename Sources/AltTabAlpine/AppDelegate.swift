@@ -12,7 +12,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var trustTimer: Timer?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        log.info("AltTab started")
+        log.info("AltTab Alpine started")
         registerLoginItemOnce()
         hotkeyTap.onTab = { [controller] in controller.onTab() }
         hotkeyTap.onOptionReleased = { [controller] in controller.onOptionReleased() }
