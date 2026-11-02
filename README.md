@@ -83,3 +83,7 @@ If a Karabiner rule changes Tab or Option+Tab, the hotkey can stop working.
   Option+Tab does not operate while secure input is on.
 - If two windows of one app have the same frame, their order in the list can be wrong.
 - Option+Tab with Command or Control is not used, so other shortcuts stay unchanged.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
