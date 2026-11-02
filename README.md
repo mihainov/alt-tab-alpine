@@ -11,6 +11,8 @@ A minimal Windows-style window switcher for macOS 14+.
 - The system Cmd+Tab does not change.
 
 The app has no visible icon. It starts at login.
+To check if it runs, use `pgrep -f ~/Applications/AltTab.app`.
+Other apps can also have the process name `AltTab`, so do not use `pgrep AltTab`.
 
 ## Build and install
 

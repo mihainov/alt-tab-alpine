@@ -33,7 +33,7 @@ run:
 	open $(INSTALL_DIR)/$(APP)
 
 stop:
-	-pkill -x $(APP_NAME)
+	-pkill -f "$(INSTALL_DIR)/$(APP)/Contents/MacOS/$(APP_NAME)"
 
 test:
 	swift test
